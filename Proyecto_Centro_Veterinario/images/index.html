@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="estilos.css">
+    <title>Encabezado, Contenedores y Formulario</title>
+    <style>
+        /* Estilos generales para los rectángulos */
+        
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+            <img src="logo.png" alt="logo de la compañía" class="logo-img">
+            <h2 class="nombre-empresa">Centro Veterinario<br>Caninos y Felinos</h2>
+        </a>
+        <nav>
+            <a href="" class="nav-link">Servicios</a>
+            <a href="" class="nav-link">Productos</a>
+            <a href="" class="nav-link">Guardería</a>
+            <a href="" class="nav-link">Promociones</a>
+        </nav>
+    </header>
+
+    <section>
+        <div class="rectangulo">
+            <h1>Cuidados y educación para su perro</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Porro eos fuga nisi ad labore, facere est maxime alias 
+                tempora sapiente reprehenderit cupiditate, totam, quae 
+                consequuntur doloremque iste rem minima corrupti.
+            </p>
+            <img src="cuidado.jpg" alt="Imagen de ejemplo">
+        </div>
+
+        <div class="rectangulo">
+            <h1>Salir de viaje con su mascota</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Porro eos fuga nisi ad labore, facere est maxime alias 
+                tempora sapiente reprehenderit cupiditate, totam, quae 
+                consequuntur doloremque iste rem minima corrupti.
+            </p>
+            <img src="descarga.jpeg" alt="Imagen de ejemplo">
+        </div>
+
+        <form id="form-cita" onsubmit="validarCita(event)">
+            <label for="mascota">Nombre de la Mascota</label>
+            <input type="text" id="mascota" name="mascota" placeholder="Ingrese el nombre de su mascota" required>
+    
+            <label for="edad">Edad</label>
+            <input type="number" id="edad" name="edad" placeholder="Edad en años" min="0" required>
+    
+            <label for="raza">Raza</label>
+            <input type="text" id="raza" name="raza" placeholder="Ingrese la raza de su mascota" required>
+    
+            <label for="fecha">Fecha de la Cita</label>
+            <input type="date" id="fecha" name="fecha" required>
+    
+            <label for="hora">Hora de la Cita</label>
+            <input type="time" id="hora" name="hora" required>
+    
+            <label for="amo">Nombre del Amo</label>
+            <input type="text" id="amo" name="amo" placeholder="Ingrese su nombre" required>
+    
+            <button type="submit">Validar Cita</button>
+        </form>
+
+    </section>
+  
+  
+    
+
+    <script>
+        function validarCita(event) {
+            event.preventDefault(); // Evita el envío del formulario por defecto
+
+            // Obtener los valores del formulario
+            const mascota = document.getElementById("mascota").value;
+            const edad = document.getElementById("edad").value;
+            const raza = document.getElementById("raza").value;
+            const fecha = document.getElementById("fecha").value;
+            const hora = document.getElementById("hora").value;
+            const amo = document.getElementById("amo").value;
+
+            // Validación de los campos 
+            if (mascota && edad && raza && fecha && hora && amo) {
+                alert("Cita validada correctamente");
+            } else {
+                alert("Por favor, complete todos los campos.");
+            }
+        }
+    </script>
+
+</body>
+</html>
